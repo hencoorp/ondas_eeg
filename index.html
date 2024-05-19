@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Data Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #messages { list-style-type: none; padding: 0; }
+    #messages li { padding: 8px; margin-bottom: 8px; background: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>Real-Time Data Viewer</h1>
+  <ul id="messages"></ul>
+
+  <script>
+    const messages = document.getElementById('messages');
+
+    // Conectar al servidor WebSocket
+    const socket = new WebSocket('wss://' + window.location.host);
+
+    // Escuchar mensajes del servidor
+    socket.addEventListener('message', (event) => {
+      const messageItem = document.createElement('li');
+      messageItem.textContent = event.data;
+      messages.appendChild(messageItem);
+    });
+  </script>
+</body>
+</html>
