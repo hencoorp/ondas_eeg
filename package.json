@@ -1,0 +1,16 @@
+{
+  "name": "real-time-example",
+  "version": "1.0.0",
+  "description": "A simple real-time example using websockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "fastify": "^3.15.1",
+    "ws": "^8.2.3"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
